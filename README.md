@@ -1,5 +1,7 @@
 # Bike Computer - Phone App
 
+https://github.com/ryczek02/ESP32BikeComputer
+
 React Native (Expo) companion app for the ESP32 bike computer. Sends GPS + compass data over BLE.
 
 ## Setup
