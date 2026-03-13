@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Bike Computer",
+    "slug": "bike-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.bike.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "GPS data is sent to the bike computer for navigation.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Background GPS tracking keeps the bike computer updated while the app is in the background.",
+        "NSBluetoothAlwaysUsageDescription": "Bluetooth is used to connect to the ESP32 bike computer.",
+        "UIBackgroundModes": ["location", "bluetooth-central"]
+      }
+    },
+    "android": {
+      "package": "com.bike.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "BLUETOOTH_SCAN",
+        "BLUETOOTH_CONNECT",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "GPS data is sent to the bike computer for navigation.",
+          "locationAlwaysAndWhenInUsePermission": "Background GPS tracking keeps the bike computer updated while the app is in the background.",
+          "locationAlwaysPermission": "Background GPS tracking keeps the bike computer updated while the app is in the background.",
+          "isIosBackgroundLocationEnabled": true
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 23
+          }
+        }
+      ]
+    ]
+  }
+}
